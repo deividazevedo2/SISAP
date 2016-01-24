@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<h:form id="login" prependId="false">
+
+		<p:dialog id="dialog" header="Acesso ao Sistema" closable="false"
+			width="600px" height="300px" draggable="false" widgetVar="dlg"
+			resizable="false" visible="true">
+
+
+			<!-- <p:growl id="messages" showDetail="true" sticky="true"
+				autoUpdate="true" /> -->
+
+			<h:panelGroup>
+				<p:messages id="messages"></p:messages>
+			</h:panelGroup>
+
+			<h:panelGrid columns="2" cellpadding="5" id="grid">
+
+				<h:outputLabel for="username" value="CPF: *" />
+				<p:inputMask id="username" required="true"
+					value="#{loginController.login}" mask="999.999.999-99"
+					requiredMessage="Login do usuário requerido.">
+				</p:inputMask>
+
+				<h:outputLabel for="password" value="Senha: * " />
+				<p:password id="password" required="true"
+					value="#{loginController.senha}"
+					requiredMessage="Senha do usuário é requerida." />
+
+				<f:facet name="footer">
+					<p:commandButton id="entrarButton" value="Entrar"
+						update="messages, grid" action="#{loginController.executarLogin}" />
+				</f:facet>
+			</h:panelGrid>
+		</p:dialog>
+	</h:form>
+</h:body>
+</html>
