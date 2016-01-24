@@ -1,0 +1,1 @@
+package br.com.iterativejr.domain.entidade;public class Atendimento {}
