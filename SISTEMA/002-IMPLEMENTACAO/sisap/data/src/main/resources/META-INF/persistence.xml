@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="sisap">
 
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<!--  <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
 
 		<class>br.com.iterativejr.domain.entidade.Pessoa</class>
 		<class>br.com.iterativejr.domain.entidade.Pedagogo</class>

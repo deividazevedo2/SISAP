@@ -25,6 +25,20 @@ public class PedagogoService implements Serializable {
 	@Inject
 	private transient PedagogoDAO pedagogoDAO;
 
+	private Pedagogo pedagogo;
+
+	public PedagogoService() {
+		pedagogo = new Pedagogo();
+	}
+
+	public Pedagogo getPedagogo() {
+		return pedagogo;
+	}
+
+	public void setPedagogo(Pedagogo pedagogo) {
+		this.pedagogo = pedagogo;
+	}
+
 	public PedagogoDAO getPedagogoDAO() {
 		return pedagogoDAO;
 	}
