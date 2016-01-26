@@ -19,7 +19,7 @@ import br.com.iterativejr.visao.redirecionamento.EnderecoPaginas;
 @Named
 @ConversationScoped
 public class DeletarPedagogoBean extends ClasseAbstrata {
-
+ 
 	private static final long serialVersionUID = 1L;
 
 	private static final Log LOGGER = LogFactory

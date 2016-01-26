@@ -4,7 +4,6 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.RollbackException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,7 +11,6 @@ import org.apache.commons.logging.LogFactory;
 import br.com.iterativejr.domain.entidade.Pedagogo;
 import br.com.iterativejr.domain.exception.SisapException;
 import br.com.iterativejr.service.negocio.impl.PedagogoService;
-
 
 @Named
 @RequestScoped
@@ -56,7 +54,7 @@ public class IndexBean extends ClasseAbstrata {
 	public void filtrar() {
 		try {
 			pedagogo = pedagogoService.buscarPorMatricula(matricula);
-		} catch (RollbackException | SisapException exception) {
+		} catch (SisapException exception) {
 			reportarMensagemDeErro(exception.getMessage());
 			LOGGER.warn("Erro ao filtrar", exception);
 		}
